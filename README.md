@@ -25,6 +25,6 @@ You must have the following installed:
 * update Vagrant box
 
   Install by running: 
-
+    
     vagrant box update
 
