@@ -36,7 +36,7 @@ You must have the following installed:
 
 ## Using kubeadm to create a cluster
 
-Kubernetes is hard to install without using third party tools, kubeadm is an official tool for simple deployment. 
+Kubernetes is hard to install without using third party tools. kubeadm is an official tool for simple deployment. 
 
 * Before you begin
 	1.	One or more virtual machines running Ubuntu 16.04+
