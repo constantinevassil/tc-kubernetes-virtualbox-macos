@@ -5,5 +5,5 @@ Vagrant config to run a full local Kubernetes cluster using the source directory
 ## Getting started
 You must have the following installed:
 
-Virtualbox >= 5.1.22
+* Virtualbox >= 5.1.22
 Download and install from https://www.virtualbox.org/.
