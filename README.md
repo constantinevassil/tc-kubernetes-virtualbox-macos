@@ -18,8 +18,8 @@ You must have the following installed:
 
   Install by running: 
 
-  vagrant plugin install vagrant-vbguest
+    vagrant plugin install vagrant-vbguest
 
-  vagrant vbguest --do install
+    vagrant vbguest --do install
 
 
