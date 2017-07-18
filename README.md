@@ -27,4 +27,11 @@ You must have the following installed:
   Install by running: 
     
     vagrant box update
+    
+* run Virtual machine (VM)
+
+  Install by running: 
+  
+    vagrant up
+
 
