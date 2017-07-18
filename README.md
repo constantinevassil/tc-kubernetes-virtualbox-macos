@@ -39,7 +39,7 @@ You must have the following installed:
 * Before you begin
 	1.	One or more machines running Ubuntu 16.04+
 	1.	1GB or more of RAM per machine (any less will leave little room for your apps)
-	1.	Full network connectivity between all machines in the cluster (public or private network is fine)
+	1.	Full network connectivity between all machines in the cluster
 
 * Objectives
 	* Install a secure Kubernetes cluster on your machines
