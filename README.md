@@ -44,5 +44,5 @@ You must have the following installed:
 * Objectives
 	* Install a secure Kubernetes cluster on your machines
 	* Install a pod network on the cluster so that application components (pods) can talk to each other
-	* Install a sample microservices application (a socks shop) on the cluster
+	* Install a sample Golang application on the cluster
 
