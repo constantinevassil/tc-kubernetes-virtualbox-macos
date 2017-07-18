@@ -7,19 +7,19 @@ You must have the following installed:
 
 * Virtualbox >= 5.1.22
 
-Download and install from https://www.virtualbox.org/.
+  Download and install from https://www.virtualbox.org/.
 
 * Vagrant >= 1.9.7
 
-Download and install from https://www.vagrantup.com/.
+  Download and install from https://www.vagrantup.com/.
 
 * vagrant-vbguest Vagrant plugin
-automatically installs the host's VirtualBox Guest Additions on the guest system.
+  automatically installs the host's VirtualBox Guest Additions on the guest system.
 
-Install by running: 
+  Install by running: 
 
-vagrant plugin install vagrant-vbguest
+  vagrant plugin install vagrant-vbguest
 
-vagrant vbguest --do install
+  vagrant vbguest --do install
 
 
