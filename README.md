@@ -36,6 +36,8 @@ You must have the following installed:
 
 ## Using kubeadm to create a cluster
 
+Kubernetes is hard to install without using third party tools, kubeadm is an official tool for simple deployment. 
+
 * Before you begin
 	1.	One or more virtual machines running Ubuntu 16.04+
 	1.	1GB or more of RAM per machine (any less will leave little room for your apps)
