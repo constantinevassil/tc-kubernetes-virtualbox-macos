@@ -22,4 +22,9 @@ You must have the following installed:
 
     vagrant vbguest --do install
 
+* update Vagrant box
+
+  Install by running: 
+
+    vagrant box update
 
