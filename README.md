@@ -36,13 +36,13 @@ You must have the following installed:
 
 ## Using kubeadm to create a cluster
 
-Before you begin
-	1	One or more machines running Ubuntu 16.04+
-	2	1GB or more of RAM per machine (any less will leave little room for your apps)
-	3	Full network connectivity between all machines in the cluster (public or private network is fine)
+* Before you begin
+	1.	One or more machines running Ubuntu 16.04+
+	1.	1GB or more of RAM per machine (any less will leave little room for your apps)
+	1.	Full network connectivity between all machines in the cluster (public or private network is fine)
 
-Objectives
-		Install a secure Kubernetes cluster on your machines
-		Install a pod network on the cluster so that application components (pods) can talk to each other
-		Install a sample microservices application (a socks shop) on the cluster
+* Objectives
+	* Install a secure Kubernetes cluster on your machines
+	* Install a pod network on the cluster so that application components (pods) can talk to each other
+	* Install a sample microservices application (a socks shop) on the cluster
 
