@@ -159,8 +159,6 @@ After successfully adding nodes you should get:
 ubuntu@master:~$ kubectl get nodes
 NAME      STATUS    AGE       VERSION
 master    Ready     19h       v1.7.1
-worker    Ready     19h       v1.7.1
-worker2   Ready     19h       v1.7.1
 ```
 
 
