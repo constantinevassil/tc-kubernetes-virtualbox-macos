@@ -38,5 +38,8 @@ multiple-machines
 
 https://github.com/topconnector/tc-kubernetes-macos/tree/master/multiple-machines
 
+TODO:
+
+Golang example using hostPath
 
 
