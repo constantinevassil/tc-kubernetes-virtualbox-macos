@@ -575,6 +575,14 @@ Proxy should be listening on 127.0.0.1:8001.
 
 Point your browser to http://127.0.0.1:8001/ui
 
+Access the service from local machine:
+
+```bash
+curl http://192.168.33.20:32658
+```
+
+
+
 
 
 
