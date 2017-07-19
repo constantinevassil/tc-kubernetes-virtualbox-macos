@@ -228,16 +228,16 @@ View the services:
 ubuntu@master:~$ kubectl get services
 NAME                  CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 kubernetes            10.96.0.1       <none>        443/TCP          8m
-tc-helloworld-go-ws   10.104.31.142   <nodes>       8080:32658/TCP   1m
+tc-helloworld-go-ws   10.104.31.142   <nodes>       8080:30350/TCP   1m
 ```
 service port number:32658 
 
 ### 5. Test the service:
 
-The http address of the service: 192.168.33.10:32658
+The http address of the service: 192.168.33.10:30350
 
 ```bash
-ubuntu@master:~$ curl http://192.168.33.10:32658
+ubuntu@master:~$ curl http://192.168.33.10:30350
 Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 78ns to run
 ```
 
@@ -247,7 +247,7 @@ Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 78ns to r
 ```bash
 ubuntu@master:~$ kubectl set image deployment/tc-helloworld-go-ws tc-helloworld-go-ws=topconnector/tc-helloworld-go-ws:v2 --record
 deployment "tc-helloworld-go-ws" image updated
-ubuntu@master:~$ curl http://192.168.33.10:32658
+ubuntu@master:~$ curl http://192.168.33.10:30350
 Hello World from Go in minimal Docker container(4.28MB) v.2.0, it took 68ns to run
 ```
 
@@ -256,7 +256,7 @@ Hello World from Go in minimal Docker container(4.28MB) v.2.0, it took 68ns to r
 ```bash
 ubuntu@master:~$ kubectl rollout undo deployment tc-helloworld-go-ws
 deployment "tc-helloworld-go-ws" rolled back
-ubuntu@master:~$ curl http://192.168.33.10:32658
+ubuntu@master:~$ curl http://192.168.33.10:30350
 Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 68ns to run
 ```
 
@@ -265,7 +265,7 @@ Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 68ns to r
 ```bash
 ubuntu@master:~$ kubectl rollout undo deployment tc-helloworld-go-ws
 deployment "tc-helloworld-go-ws" rolled back
-ubuntu@master:~$ curl http://192.168.33.10:32658
+ubuntu@master:~$ curl http://192.168.33.10:30350
 Hello World from Go in minimal Docker container(4.28MB) v.2.0, it took 68ns to run
 ```
 
@@ -385,7 +385,7 @@ Point your browser to http://127.0.0.1:8001/ui
 Access the service from local machine:
 
 ```bash
-curl http://192.168.33.10:32658
+curl http://192.168.33.10:30350
 ```
 
 
