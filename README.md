@@ -139,6 +139,7 @@ for a single-machine Kubernetes cluster, run:
 
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
+That way, pods will actually schedule on a master node.
 
 #### 6. You should now deploy a pod network to the cluster.
 
