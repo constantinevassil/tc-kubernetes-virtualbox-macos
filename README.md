@@ -39,7 +39,7 @@ You must have the following installed:
   
     vagrant up
 
-## Using kubeadm to create a cluster - single machine configuration
+## Using kubeadm to create a cluster - single machine configuration. To schedule pods on master node.
 
 Kubernetes is hard to install without using third party tools. kubeadm is an official tool for simple deployment. 
 
