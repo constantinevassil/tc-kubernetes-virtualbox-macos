@@ -163,24 +163,6 @@ worker    Ready     19h       v1.7.1
 worker2   Ready     19h       v1.7.1
 ```
 
-#### 10. Check the pods creation:
-
-ubuntu@master:~$ kubectl get pods -o wide --all-namespaces
-
-After successfull initialization you should get:
-```bash
-ubuntu@master:~$ kubectl get pods -o wide --all-namespaces
-NAMESPACE     NAME                             READY     STATUS    RESTARTS   AGE       IP              NODE
-kube-system   etcd-master                      1/1       Running   0          2m        192.168.33.10   master
-kube-system   kube-apiserver-master            1/1       Running   0          2m        192.168.33.10   master
-kube-system   kube-controller-manager-master   1/1       Running   0          3m        192.168.33.10   master
-kube-system   kube-dns-2425271678-d4m02        3/3       Running   0          2m        10.244.0.2      master
-kube-system   kube-flannel-ds-08f5x            2/2       Running   0          58s       192.168.33.10   master
-kube-system   kube-proxy-hgwnh                 1/1       Running   0          2m        192.168.33.10   master
-kube-system   kube-scheduler-master            1/1       Running   0          2m        192.168.33.10   master
-```
-
-
 
 ## Testing kubernetes from inside the master
 
