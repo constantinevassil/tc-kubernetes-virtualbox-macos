@@ -10,6 +10,7 @@ Topics:
 1. Virtualbox 
 1. Vagrant
 1. Ubuntu 16.04+
+1. kubeadm
 1. Flannel
 1. Create a deployment that manages a Pod
 1. Scaling
