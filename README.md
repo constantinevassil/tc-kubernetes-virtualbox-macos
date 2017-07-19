@@ -337,7 +337,9 @@ Kube version 1.6 uses RBAC as a default form of auth.
 
 ### 1. Install the dashboard
 
+```bash
 kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+```
 
 We also need to configure a role.
 
@@ -367,5 +369,10 @@ subjects:
   name: admin
 - kind: ServiceAccount
   name: default
-  namespace: kube-system```
+  namespace: kube-system
+  ```
+
+```bash
+kubectl apply -f admin-role.yml 
+```
 
