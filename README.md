@@ -212,10 +212,16 @@ kube-system   kube-scheduler-master                      1/1       Running   0  
 
 deploy topconnector/helloworld-go-ws
 
+```bash
 vagrant ssh master
+ubuntu@master:~$ kubectl run helloworld-go-ws --image=topconnector/helloworld-go-ws:v1 --port=8080 --record
+```
+
+Check rollout status:
 
 ```bash
-ubuntu@master:~$ kubectl run helloworld-go-ws --image=topconnector/helloworld-go-ws:v1 --port=8080 --record
+ubuntu@master:~$ kubectl rollout status deployment/helloworld-go-ws
+deployment "helloworld-go-ws" successfully rolled out
 ```
 
 
