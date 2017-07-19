@@ -239,20 +239,19 @@ NAME                                       READY     STATUS    RESTARTS   AGE   
 helloworld-go-ws-495672996-nt1m9           1/1       Running   0          5m        10.244.1.4   worker
 ```
 
-Scaling:
+### 2. Scaling:
 ```bash
 ubuntu@master:~$ kubectl scale --replicas=2 deployment/helloworld-go-ws --record
 deployment "helloworld-go-ws" scaled
 ```
 
-Create a service:
+### 3. Create a service:
 ```bash
 ubuntu@master:~$ kubectl expose deployment helloworld-go-ws --type=NodePort
 service "helloworld-go-ws" exposed
 ```
 
-
-Access the service:
+### 4. Access the service:
 
 1. get node "worker"'s IP address:
 ```bash
