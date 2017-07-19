@@ -342,7 +342,11 @@ ubuntu@master:~$ kubectl create -f https://rawgit.com/kubernetes/dashboard/maste
 
 We also need to configure a role.
 
-In a text editor of your choice (vim) create admin-role.yml on master:
+copy from local folder:
+
+ubuntu@master:~$ cat /vagrant/admin-role.yml > admin-role.yml
+
+Or in a text editor of your choice (vim) create admin-role.yml on master:
  
 ```yaml
 ---
