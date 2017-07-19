@@ -385,11 +385,15 @@ In order to get a nice GUI, we’ll set up a Dashboard.
 
 Kube version 1.6 uses RBAC as a default form of auth.
 
+### On master
+
 ### 1. Install the dashboard
 
 ```bash
-kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+ubuntu@master:~$ kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
 ```
+
+### 2. Configure a role
 
 We also need to configure a role.
 
@@ -423,8 +427,10 @@ subjects:
   ```
 
 ```bash
-kubectl apply -f admin-role.yml 
+ubuntu@master:~$ kubectl apply -f admin-role.yml 
 ```
+
+### On local machine
 
 Run proxy to use dashboard locally:
 
