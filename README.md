@@ -93,7 +93,7 @@ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kub
 
 Repeat above step on the workers:
 
-1. worker
+2. worker
 
 ```bash
 vagrant ssh worker
@@ -102,7 +102,7 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/
 sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ```
 
-1. worker2
+3. worker2
 
 ```bash
 vagrant ssh worker2
@@ -111,7 +111,9 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/
 sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ```
 
-When installed we can start cluster initialization on the master node:
+4. start cluster initialization on the master node.
+
+
 When using flannel as the pod network (described in next step), specify --pod-network-cidr=10.244.0.0/16. 
 ```bash
 vagrant ssh master
