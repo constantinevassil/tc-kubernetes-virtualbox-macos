@@ -329,6 +329,56 @@ ubuntu@master:~$ curl http://192.168.33.20:32658
 Hello World from Go in minimal Docker container(4.28MB) v.2.0, it took 68ns to run
 ```
 
+## Access your cluster from your local machine
+
+### 1. Get admin.conf from master
+
+Grab admin.conf from /etc/kubernetes on master and copy to your local machine
+
+### 2. Install and Set Up kubectl on your local machine
+
+Now in order for you to actually access your cluster from your Mac you need kubectl locally.
+
+Download the latest release with the command:
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl
+
+Make the kubectl binary executable.
+
+chmod +x ./kubectl
+
+Move the binary in to your PATH.
+
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+
+### 3. Check master configuration 
+
+Get nodes:
+
+```bash
+kubectl --kubeconfig ./admin.conf get nodes
+AME      STATUS    AGE       VERSION
+master    Ready     11h       v1.7.1
+```
+Get pods:
+
+```bash
+kubectl --kubeconfig ./admin.conf get pods
+NAME                                   READY     STATUS    RESTARTS   AGE
+tc-helloworld-go-ws-1724924830-gpf9c   1/1       Running   0          11h
+tc-helloworld-go-ws-1724924830-wv4f1   1/1       Running   0          11h
+```
+
+Get services:
+
+```bash
+kubectl --kubeconfig ./admin.conf get services
+NAME                  CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+kubernetes            10.96.0.1       <none>        443/TCP          11h
+tc-helloworld-go-ws   10.105.98.177   <nodes>       8080:32631/TCP   11h
+```
+	
 ## Dashboard
 
 In order to get a nice GUI, we’ll set up a Dashboard.
@@ -375,4 +425,17 @@ subjects:
 ```bash
 kubectl apply -f admin-role.yml 
 ```
+
+Run proxy to use dashboard locally:
+
+```bash
+kubectl --kubeconfig ./admin.conf proxy
+```
+
+Proxy should be listening on 127.0.0.1:8001. 
+
+Point your browser to http://127.0.0.1:8001/ui
+
+
+
 
