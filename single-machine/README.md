@@ -273,7 +273,9 @@ Hello World from Go in minimal Docker container(4.28MB) v.2.0, it took 68ns to r
 
 ### 1. Get admin.conf from master
 
-Get admin.conf from /etc/kubernetes on master and copy to your local machine
+Get admin.conf from /etc/kubernetes on master and copy to your local machine:
+
+cat /etc/kubernetes/admin.conf 
 
 ### 2. Install and Set Up kubectl on your local machine
 
