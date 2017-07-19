@@ -239,6 +239,26 @@ NAME                                       READY     STATUS    RESTARTS   AGE   
 helloworld-go-ws-495672996-nt1m9           1/1       Running   0          5m        10.244.1.4   worker
 ```
 
+Scaling:
+```bash
+ubuntu@master:~$ kubectl scale --replicas=2 deployment/helloworld-go-ws --record
+deployment "helloworld-go-ws" scaled
+```
+
+Create a service:
+```bash
+ubuntu@master:~$ kubectl expose deployment helloworld-go-ws --type=NodePort
+service "helloworld-go-ws" exposed
+```
+
+View the services:
+
+```bash
+ubuntu@master:~$ kubectl get services
+NAME                      CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+helloworld-go-ws          10.101.54.8    <nodes>       8080:30817/TCP   52s
+kubernetes                10.96.0.1      <none>        443/TCP          21h
+```
 
 
 
