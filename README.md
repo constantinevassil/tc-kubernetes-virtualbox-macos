@@ -219,7 +219,7 @@ kube-system   kube-scheduler-master                      1/1       Running   0  
 
 ## Testing kubernetes
 
-### 1. Create a Deployment that manages a Pod
+### 1. Create a deployment that manages a Pod. 
 
 deploy topconnector/helloworld-go-ws
 
@@ -301,6 +301,12 @@ Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 78ns to r
 
 ```bash
 ubuntu@master:~$ kubectl set image deployment/tc-helloworld-go-ws tc-helloworld-go-ws=topconnector/tc-helloworld-go-ws:v2 --record
+deployment "tc-helloworld-go-ws" image updated
 ```
 
+### 7. Rollback your app to version 1
+
+```bash
+kubectl rollout undo deployment tc-helloworld-go-ws
+```
 
