@@ -293,7 +293,7 @@ The http address of the service: 192.168.33.20:30710
 
 ```bash
 ubuntu@master:~$ curl http://192.168.33.20:30710
-Hello World from Go in minimal Docker container(4.28MB) v.2.0, it took 78ns to run
+Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 78ns to run
 ```
 
 
