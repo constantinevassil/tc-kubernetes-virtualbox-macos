@@ -69,7 +69,7 @@ Vagrant.configure("2") do |config|
       node.vm.network :private_network, ip: "192.168.33.10"
       node.vm.provision :shell, inline: "sed 's/127\.0\.0\.1.*master.*/192\.168\.33\.10 master/' -i /etc/hosts"
     end
- 
+
     config.vm.define "worker" do |node|
       node.vm.hostname = "worker"
       node.vm.network :private_network, ip: "192.168.33.20"
@@ -96,6 +96,9 @@ ubuntu@master:~$ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | s
 ubuntu@master:~$ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ubuntu@master:~$ exit
 ```
+
+for a single-machine Kubernetes cluster 
+kubectl taint nodes --all node-role.kubernetes.io/master-
 
 Repeat above step on the workers:
 
