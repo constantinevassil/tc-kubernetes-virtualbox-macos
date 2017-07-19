@@ -82,7 +82,7 @@ end
 After all VMs are up and running the first step is to add official Kubernetes repo and to install all required packages.
 
 ### install all required packages
-#### 1. master
+#### 1. On master
 
 ```bash
 vagrant ssh master
@@ -93,7 +93,7 @@ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kub
 
 Repeat above step on the workers:
 
-#### 2. worker
+#### 2. On worker
 
 ```bash
 vagrant ssh worker
@@ -102,7 +102,7 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/
 sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ```
 
-#### 3. worker2
+#### 3. On worker2
 
 ```bash
 vagrant ssh worker2
@@ -111,7 +111,7 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/
 sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ```
 
-#### 4. start cluster initialization on the master node.
+#### 4. Start cluster initialization on the master node.
 
 
 When using flannel as the pod network (described in next step), specify --pod-network-cidr=10.244.0.0/16. 
