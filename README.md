@@ -81,7 +81,7 @@ end
 
 After all VMs are up and running the first step is to add official Kubernetes repo and to install all required packages.
 
-### install all required packages
+### Install all required packages
 #### 1. On master
 
 ```bash
