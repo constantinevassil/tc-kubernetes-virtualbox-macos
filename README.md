@@ -225,13 +225,13 @@ deploy topconnector/helloworld-go-ws
 
 ```bash
 vagrant ssh master
-ubuntu@master:~$ kubectl run helloworld-go-ws --image=topconnector/helloworld-go-ws:v1 --port=8080 --record
+ubuntu@master:~$ kubectl run tc-helloworld-go-ws --image=topconnector/tc-helloworld-go-ws:v1 --port=8080 --record
 ```
 
 Check rollout status:
 
 ```bash
-ubuntu@master:~$ kubectl rollout status deployment/helloworld-go-ws
+ubuntu@master:~$ kubectl rollout status deployment/tc-helloworld-go-ws
 deployment "helloworld-go-ws" successfully rolled out
 ```
 
@@ -239,7 +239,7 @@ View the Deployment:
 ```bash
 ubuntu@master:~$ kubectl get deployments
 NAME                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-helloworld-go-ws          1         1         1            1           3m
+tc-helloworld-go-ws          1         1         1            1           3m
 ```
 
 View the Pods:
@@ -247,18 +247,18 @@ View the Pods:
 ```bash
 ubuntu@master:~$ kubectl get pods -o wide
 NAME                                       READY     STATUS    RESTARTS   AGE       IP           NODE
-helloworld-go-ws-495672996-nt1m9           1/1       Running   0          5m        10.244.1.4   worker
+tc-helloworld-go-ws-495672996-nt1m9           1/1       Running   0          5m        10.244.1.4   worker
 ```
 
 ### 2. Scaling:
 ```bash
-ubuntu@master:~$ kubectl scale --replicas=2 deployment/helloworld-go-ws --record
+ubuntu@master:~$ kubectl scale --replicas=2 deployment/tc-helloworld-go-ws --record
 deployment "helloworld-go-ws" scaled
 ```
 
 ### 3. Create a service:
 ```bash
-ubuntu@master:~$ kubectl expose deployment helloworld-go-ws --type=NodePort
+ubuntu@master:~$ kubectl expose deployment tc-helloworld-go-ws --type=NodePort
 service "helloworld-go-ws" exposed
 ```
 
@@ -282,7 +282,7 @@ View the services:
 ```bash
 ubuntu@master:~$ kubectl get services
 NAME                      CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
-helloworld-go-ws          10.101.54.8    <nodes>       8080:30817/TCP   52s
+tc-helloworld-go-ws          10.101.54.8    <nodes>       8080:30817/TCP   52s
 kubernetes                10.96.0.1      <none>        443/TCP          21h
 ```
 service port number:30817 
