@@ -315,3 +315,11 @@ ubuntu@master:~$ curl http://192.168.33.20:32658
 Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 68ns to run
 ```
 
+### 8. Rollback your app to version 2
+
+```bash
+ubuntu@master:~$ kubectl rollout undo deployment tc-helloworld-go-ws
+deployment "tc-helloworld-go-ws" rolled back
+ubuntu@master:~$ curl http://192.168.33.20:32658
+Hello World from Go in minimal Docker container(4.28MB) v.2.0, it took 68ns to run
+```
