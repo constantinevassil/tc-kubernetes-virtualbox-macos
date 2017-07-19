@@ -283,16 +283,16 @@ View the services:
 ubuntu@master:~$ kubectl get services
 NAME                  CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 kubernetes            10.96.0.1       <none>        443/TCP          8m
-tc-helloworld-go-ws   10.104.31.142   <nodes>       8080:30710/TCP   1m
+tc-helloworld-go-ws   10.104.31.142   <nodes>       8080:32658/TCP   1m
 ```
 service port number:30817 
 
 ### 5. Test the service:
 
-The http address of the service: 192.168.33.20:30710
+The http address of the service: 192.168.33.20:32658
 
 ```bash
-ubuntu@master:~$ curl http://192.168.33.20:30710
+ubuntu@master:~$ curl http://192.168.33.20:32658
 Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 78ns to run
 ```
 
