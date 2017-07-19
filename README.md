@@ -118,6 +118,18 @@ To start using your cluster, you need to run (as a regular user):
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
+You should now deploy a pod network to the cluster.
+Flannel RBAC:
+```bash
+ curl -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel-rbac.yml
+kubectl apply -f kube-flannel-rbac.yml
+```
+
+Flannel config:
+```bash
+curl -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f kube-flannel.yml
+```
 
 
 
