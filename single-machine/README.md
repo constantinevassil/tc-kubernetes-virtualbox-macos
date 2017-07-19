@@ -7,7 +7,7 @@ Vagrant config to run a full local Kubernetes cluster using the source directory
 
 git clone https://github.com/topconnector/tc-kubernetes-macos.git
 
-cd kubernetes-macos
+cd tc-kubernetes-macos
 
 cd single-machine
 
