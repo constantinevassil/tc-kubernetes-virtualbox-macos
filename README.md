@@ -40,6 +40,7 @@ https://github.com/topconnector/tc-kubernetes-macos/tree/master/multiple-machine
 
 TODO:
 
+Persistent storage
 Golang example using hostPath
 
 
