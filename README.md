@@ -300,7 +300,7 @@ Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 78ns to r
 ### 6. Update your app to version 2
 
 ```bash
-ubuntu@master:~$ ubuntu@master:~$ kubectl set image deployment/tc-helloworld-go-ws tc-helloworld-go-ws=topconnector/tc-helloworld-go-ws:v2 --record
+ubuntu@master:~$ kubectl set image deployment/tc-helloworld-go-ws tc-helloworld-go-ws=topconnector/tc-helloworld-go-ws:v2 --record
 ```
 
 
