@@ -171,15 +171,13 @@ After successfull initialization you should get:
 ```bash
 ubuntu@master:~$ kubectl get pods -o wide --all-namespaces
 NAMESPACE     NAME                             READY     STATUS    RESTARTS   AGE       IP              NODE
-kube-system   etcd-master                                1/1       Running   0          19h       192.168.33.10   master
-kube-system   kube-apiserver-master                      1/1       Running   0          19h       192.168.33.10   master
-kube-system   kube-controller-manager-master             1/1       Running   0          20h       192.168.33.10   master
-kube-system   kube-dns-2425271678-nj435                  3/3       Running   0          20h       10.244.0.2      master
-kube-system   kube-flannel-ds-cj62d                      2/2       Running   0          19h       192.168.33.10   master
-kube-system   kube-flannel-ds-dsrrj                      2/2       Running   0          19h       192.168.33.10   master
-kube-system   kube-proxy-pr1qd                           1/1       Running   0          19h       192.168.33.10   worker
-kube-system   kube-proxy-xtbbr                           1/1       Running   0          20h       192.168.33.10   master
-kube-system   kube-scheduler-master                      1/1       Running   0          20h       192.168.33.10   master
+kube-system   etcd-master                      1/1       Running   0          2m        192.168.33.10   master
+kube-system   kube-apiserver-master            1/1       Running   0          2m        192.168.33.10   master
+kube-system   kube-controller-manager-master   1/1       Running   0          3m        192.168.33.10   master
+kube-system   kube-dns-2425271678-d4m02        3/3       Running   0          2m        10.244.0.2      master
+kube-system   kube-flannel-ds-08f5x            2/2       Running   0          58s       192.168.33.10   master
+kube-system   kube-proxy-hgwnh                 1/1       Running   0          2m        192.168.33.10   master
+kube-system   kube-scheduler-master            1/1       Running   0          2m        192.168.33.10   master
 ```
 
 
