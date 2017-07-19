@@ -224,6 +224,12 @@ ubuntu@master:~$ kubectl rollout status deployment/helloworld-go-ws
 deployment "helloworld-go-ws" successfully rolled out
 ```
 
+```bash
+ubuntu@master:~$ kubectl get deployments
+NAME                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+helloworld-go-ws          1         1         1            1           3m
+```
+
 
 
 
