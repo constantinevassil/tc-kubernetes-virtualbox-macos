@@ -121,7 +121,6 @@ ubuntu@master:~$ exit
 
 #### 4. Start cluster initialization on the master node.
 
-
 When using flannel as the pod network (described in step 6.), specify --pod-network-cidr=10.244.0.0/16. 
 ```bash
 vagrant ssh master
@@ -136,6 +135,11 @@ ubuntu@master:~$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 ubuntu@master:~$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
+for a single-machine Kubernetes cluster, run:
+
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
+
 #### 6. You should now deploy a pod network to the cluster.
 
 Flannel RBAC:
@@ -149,10 +153,6 @@ Flannel config:
 ubuntu@master:~$ curl -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ubuntu@master:~$ kubectl apply -f kube-flannel.yml
 ```
-
-for a single-machine Kubernetes cluster, run:
-
-kubectl taint nodes --all node-role.kubernetes.io/master-
 
 #### 7. Check the cluster initialization:
 ```bash
