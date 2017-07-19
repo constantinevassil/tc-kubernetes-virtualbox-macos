@@ -97,10 +97,6 @@ ubuntu@master:~$ sudo apt-get update && sudo apt-get install -y docker-engine ku
 ubuntu@master:~$ exit
 ```
 
-for a single-machine Kubernetes cluster, run:
-
-kubectl taint nodes --all node-role.kubernetes.io/master-
-
 Repeat above step on the workers:
 
 #### 2. On worker
@@ -153,6 +149,10 @@ Flannel config:
 ubuntu@master:~$ curl -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ubuntu@master:~$ kubectl apply -f kube-flannel.yml
 ```
+
+for a single-machine Kubernetes cluster, run:
+
+kubectl taint nodes --all node-role.kubernetes.io/master-
 
 #### 7. Check the cluster initialization:
 ```bash
