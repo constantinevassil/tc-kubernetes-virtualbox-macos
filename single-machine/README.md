@@ -76,7 +76,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-After all VMs are up and running the first step is to add official Kubernetes repo and to install all required packages.
+After VM is up and running the first step is to add official Kubernetes repo and to install all required packages.
 
 ### Install all required packages
 #### 1. On master
