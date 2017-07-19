@@ -189,7 +189,7 @@ worker2   Ready     19h       v1.7.1
 
 #### 10. Check the pods creation:
 
-kubectl get pods -o wide --all-namespaces
+ubuntu@master:~$ kubectl get pods -o wide --all-namespaces
 
 After successfull initialization you should get:
 ```bash
