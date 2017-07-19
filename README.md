@@ -285,7 +285,7 @@ NAME                  CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 kubernetes            10.96.0.1       <none>        443/TCP          8m
 tc-helloworld-go-ws   10.104.31.142   <nodes>       8080:32658/TCP   1m
 ```
-service port number:30817 
+service port number:32658 
 
 ### 5. Test the service:
 
