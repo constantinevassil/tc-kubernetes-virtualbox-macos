@@ -205,3 +205,18 @@ kube-system   kube-proxy-pr1qd                           1/1       Running   0  
 kube-system   kube-proxy-xtbbr                           1/1       Running   0          20h       192.168.33.10   master
 kube-system   kube-scheduler-master                      1/1       Running   0          20h       192.168.33.10   master
 ```
+
+## Testing kubernetes
+
+### 1. Create a Deployment that manages a Pod
+
+deploy topconnector/helloworld-go-ws
+
+```bash
+kubectl run globalip --image=topconnector/helloworld-go-ws:v1 --port=8080 --record
+```
+
+
+
+
+
