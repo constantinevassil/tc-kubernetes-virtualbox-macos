@@ -224,12 +224,20 @@ ubuntu@master:~$ kubectl rollout status deployment/helloworld-go-ws
 deployment "helloworld-go-ws" successfully rolled out
 ```
 
+View the Deployment:
 ```bash
 ubuntu@master:~$ kubectl get deployments
 NAME                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 helloworld-go-ws          1         1         1            1           3m
 ```
 
+View the Pods:
+
+```bash
+ubuntu@master:~$ kubectl get pods -o wide
+NAME                                       READY     STATUS    RESTARTS   AGE       IP           NODE
+helloworld-go-ws-495672996-nt1m9           1/1       Running   0          5m        10.244.1.4   worker
+```
 
 
 
