@@ -122,7 +122,7 @@ ubuntu@master:~$ exit
 #### 4. Start cluster initialization on the master node.
 
 
-When using flannel as the pod network (described in next step), specify --pod-network-cidr=10.244.0.0/16. 
+When using flannel as the pod network (described in step 6.), specify --pod-network-cidr=10.244.0.0/16. 
 ```bash
 vagrant ssh master
 ubuntu@master:~$ sudo kubeadm init --apiserver-advertise-address 192.168.33.10 --pod-network-cidr 10.244.0.0/16 --token 8c2350.f55343444a6ffc46
