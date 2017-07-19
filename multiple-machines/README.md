@@ -9,6 +9,8 @@ git clone https://github.com/topconnector/tc-kubernetes-macos.git
 
 cd kubernetes-macos
 
+cd multiple-machines
+
 You must have the following installed:
 
 * Virtualbox >= 5.1.22
