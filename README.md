@@ -142,7 +142,7 @@ curl -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/ku
 kubectl apply -f kube-flannel.yml
 ```
 
-#### 7. Check the installation:
+#### 7. Check the cluster initialization:
 ```bash
 kubectl get pods -o wide --all-namespaces
 ```
@@ -160,6 +160,16 @@ kube-system   kube-proxy-vthjs                 1/1       Running   0          13
 kube-system   kube-scheduler-master            1/1       Running   0          8m        192.168.33.10   master
 ```
 
+#### 8. Adding Kubernetes nodes. It is easy - just one command.
+
+```bash
+vagrant ssh worker
+sudo kubeadm join --token 8c2350.f55343444a6ffc46 192.168.33.10:6443 --skip-preflight-checks
+```
+```bash
+vagrant ssh worker2
+sudo kubeadm join --token 8c2350.f55343444a6ffc46 192.168.33.10:6443 --skip-preflight-checks
+```
 
 
 
