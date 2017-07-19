@@ -222,7 +222,7 @@ kube-system   kube-proxy-xtbbr                           1/1       Running   0  
 kube-system   kube-scheduler-master                      1/1       Running   0          20h       192.168.33.10   master
 ```
 
-## Testing kubernetes
+## Testing kubernetes from inside the master
 
 ### 1. Create a deployment that manages a Pod. 
 
@@ -328,3 +328,44 @@ deployment "tc-helloworld-go-ws" rolled back
 ubuntu@master:~$ curl http://192.168.33.20:32658
 Hello World from Go in minimal Docker container(4.28MB) v.2.0, it took 68ns to run
 ```
+
+## Dashboard
+
+In order to get a nice GUI, we’ll set up a Dashboard.
+
+Kube version 1.6 uses RBAC as a default form of auth.
+
+### 1. Install the dashboard
+
+kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+
+We also need to configure a role.
+
+In a text editor of your choice (vim) create admin-role.yml on master:
+ 
+```yaml
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: admin-role
+rules:
+  - apiGroups: ["*"]
+    resources: ["*"]
+    verbs: ["*"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: admin-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin-role
+subjects:
+- kind: Group
+  name: admin
+- kind: ServiceAccount
+  name: default
+  namespace: kube-system```
+
