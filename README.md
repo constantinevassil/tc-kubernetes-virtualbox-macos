@@ -103,6 +103,11 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/
 sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ```
 
-
+When installed we can start cluster initialization on the master node:
+When using flannel as the pod network (described in next step), specify --pod-network-cidr=10.244.0.0/16. 
+```javascript
+vagrant ssh master
+sudo kubeadm init --apiserver-advertise-address 192.168.33.10 --pod-network-cidr 10.244.0.0/16 --token 8c2350.f55343444a6ffc46
+```
 
 
