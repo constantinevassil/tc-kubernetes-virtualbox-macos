@@ -79,9 +79,10 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-After all VMs are up and running the first step is to add official Kubernetes repo and to install all required packages:
+After all VMs are up and running the first step is to add official Kubernetes repo and to install all required packages.
 
 ### install all required packages
+1. master
 
 ```bash
 vagrant ssh master
@@ -91,12 +92,17 @@ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kub
 ```
 
 Repeat above step on the workers:
+
+1. worker
+
 ```bash
 vagrant ssh worker
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ```
+
+1. worker2
 
 ```bash
 vagrant ssh worker2
