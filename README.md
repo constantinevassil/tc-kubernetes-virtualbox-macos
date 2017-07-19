@@ -49,3 +49,9 @@ Kubernetes is hard to install without using third party tools. kubeadm is an off
 	* Install a sample Golang application on the cluster
 
 Everything is done manually for a better understanding of the process. Here is Vagrantfile I used to run 2 VMs:
+
+```javascript
+if (isAwesome){
+  return true
+}
+```
