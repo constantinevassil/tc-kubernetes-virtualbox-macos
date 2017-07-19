@@ -56,7 +56,7 @@ Kubernetes is hard to install without using third party tools. kubeadm is an off
 	* Install a pod network on the cluster so that application components (pods) can talk to each other
 	* Install a sample Golang application on the cluster
 
-Everything is done manually for a better understanding of the process. Here is Vagrantfile I used to run 2 VMs:
+Everything is done manually for a better understanding of the process. Here is Vagrantfile I used to run 1 VM:
 
 ```javascript
 Vagrant.configure("2") do |config|
