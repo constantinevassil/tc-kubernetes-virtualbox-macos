@@ -213,7 +213,7 @@ kube-system   kube-scheduler-master                      1/1       Running   0  
 deploy topconnector/helloworld-go-ws
 
 ```bash
-kubectl run globalip --image=topconnector/helloworld-go-ws:v1 --port=8080 --record
+kubectl run helloworld-go-ws --image=topconnector/helloworld-go-ws:v1 --port=8080 --record
 ```
 
 
