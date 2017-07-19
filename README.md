@@ -82,7 +82,7 @@ end
 After all VMs are up and running the first step is to add official Kubernetes repo and to install all required packages.
 
 ### install all required packages
-1. master
+#### 1. master
 
 ```bash
 vagrant ssh master
@@ -93,7 +93,7 @@ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kub
 
 Repeat above step on the workers:
 
-2. worker
+#### 2. worker
 
 ```bash
 vagrant ssh worker
@@ -102,7 +102,7 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/
 sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ```
 
-3. worker2
+#### 3. worker2
 
 ```bash
 vagrant ssh worker2
@@ -111,7 +111,7 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/
 sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ```
 
-4. start cluster initialization on the master node.
+#### 4. start cluster initialization on the master node.
 
 
 When using flannel as the pod network (described in next step), specify --pod-network-cidr=10.244.0.0/16. 
@@ -120,7 +120,7 @@ vagrant ssh master
 sudo kubeadm init --apiserver-advertise-address 192.168.33.10 --pod-network-cidr 10.244.0.0/16 --token 8c2350.f55343444a6ffc46
 ```
 
-To start using your cluster, you need to run (as a regular user):
+#### 5. To start using your cluster, you need to run (as a regular user):
 
 ```bash
   mkdir -p $HOME/.kube
@@ -128,7 +128,7 @@ To start using your cluster, you need to run (as a regular user):
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-You should now deploy a pod network to the cluster.
+#### 6. You should now deploy a pod network to the cluster.
 
 Flannel RBAC:
 ```bash
