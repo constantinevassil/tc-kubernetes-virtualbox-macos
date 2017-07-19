@@ -276,7 +276,7 @@ kubernetes                10.96.0.1      <none>        443/TCP          21h
 ```
 service port number:30817 
 
-test the service:
+### 5. Test the service:
 
 The http address of the service: 192.168.33.20:30817
 
