@@ -107,7 +107,9 @@ ubuntu@master:~$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 for a single-machine Kubernetes cluster, run:
 
+```bash
 kubectl taint nodes --all node-role.kubernetes.io/master-
+```
 
 That way, pods will actually schedule on a master node.
 
