@@ -221,7 +221,7 @@ kube-system   kube-scheduler-master                      1/1       Running   0  
 
 ### 1. Create a deployment that manages a Pod. 
 
-deploy topconnector/helloworld-go-ws
+deploy topconnector/tc-helloworld-go-ws
 
 ```bash
 vagrant ssh master
