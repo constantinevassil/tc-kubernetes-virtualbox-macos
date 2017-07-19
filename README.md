@@ -97,7 +97,8 @@ ubuntu@master:~$ sudo apt-get update && sudo apt-get install -y docker-engine ku
 ubuntu@master:~$ exit
 ```
 
-for a single-machine Kubernetes cluster 
+for a single-machine Kubernetes cluster, run:
+
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
 Repeat above step on the workers:
