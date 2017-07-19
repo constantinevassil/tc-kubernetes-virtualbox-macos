@@ -251,13 +251,39 @@ ubuntu@master:~$ kubectl expose deployment helloworld-go-ws --type=NodePort
 service "helloworld-go-ws" exposed
 ```
 
-View the services:
 
+Access the service:
+
+1. get node "worker"'s IP address:
+```bash
+ubuntu@master:~$ kubectl describe nodes
+...
+Addresses:
+  InternalIP:	192.168.33.20
+  Hostname:	worker
+...  
+```
+
+IP address:192.168.33.20
+
+2. get service port number
+
+View the services:
 ```bash
 ubuntu@master:~$ kubectl get services
 NAME                      CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
 helloworld-go-ws          10.101.54.8    <nodes>       8080:30817/TCP   52s
 kubernetes                10.96.0.1      <none>        443/TCP          21h
+```
+service port number:30817 
+
+test the service:
+
+The http address of the service: 192.168.33.20:30817
+
+```bash
+ubuntu@master:~$ curl http://192.168.33.20:30817
+Hello World from Go in minimal Docker container(4.28MB) v.2.0, it took 78ns to run
 ```
 
 
