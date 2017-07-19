@@ -302,11 +302,16 @@ Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 78ns to r
 ```bash
 ubuntu@master:~$ kubectl set image deployment/tc-helloworld-go-ws tc-helloworld-go-ws=topconnector/tc-helloworld-go-ws:v2 --record
 deployment "tc-helloworld-go-ws" image updated
+ubuntu@master:~$ curl http://192.168.33.20:32658
+Hello World from Go in minimal Docker container(4.28MB) v.2.0, it took 68ns to run
 ```
 
 ### 7. Rollback your app to version 1
 
 ```bash
-kubectl rollout undo deployment tc-helloworld-go-ws
+ubuntu@master:~$ kubectl rollout undo deployment tc-helloworld-go-ws
+deployment "tc-helloworld-go-ws" rolled back
+ubuntu@master:~$ curl http://192.168.33.20:32658
+Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 68ns to run
 ```
 
