@@ -86,9 +86,9 @@ After all VMs are up and running the first step is to add official Kubernetes re
 
 ```bash
 vagrant ssh master
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
+ubuntu@master:~$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+ubuntu@master:~$ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+ubuntu@master:~$ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ```
 
 Repeat above step on the workers:
@@ -97,18 +97,18 @@ Repeat above step on the workers:
 
 ```bash
 vagrant ssh worker
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
+ubuntu@worker:~$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+ubuntu@worker:~$ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+ubuntu@worker:~$ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ```
 
 #### 3. On worker2
 
 ```bash
 vagrant ssh worker2
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
+ubuntu@worker2:~$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+ubuntu@worker2:~$ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+ubuntu@worker2:~$ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
 ```
 
 #### 4. Start cluster initialization on the master node.
@@ -117,34 +117,34 @@ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kub
 When using flannel as the pod network (described in next step), specify --pod-network-cidr=10.244.0.0/16. 
 ```bash
 vagrant ssh master
-sudo kubeadm init --apiserver-advertise-address 192.168.33.10 --pod-network-cidr 10.244.0.0/16 --token 8c2350.f55343444a6ffc46
+ubuntu@master:~$ sudo kubeadm init --apiserver-advertise-address 192.168.33.10 --pod-network-cidr 10.244.0.0/16 --token 8c2350.f55343444a6ffc46
 ```
 
 #### 5. To start using your cluster, you need to run (as a regular user):
 
 ```bash
-  mkdir -p $HOME/.kube
-  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+ubuntu@master:~$ mkdir -p $HOME/.kube
+ubuntu@master:~$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+ubuntu@master:~$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
 #### 6. You should now deploy a pod network to the cluster.
 
 Flannel RBAC:
 ```bash
- curl -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel-rbac.yml
-kubectl apply -f kube-flannel-rbac.yml
+ubuntu@master:~$ curl -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel-rbac.yml
+ubuntu@master:~$ kubectl apply -f kube-flannel-rbac.yml
 ```
 
 Flannel config:
 ```bash
-curl -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-kubectl apply -f kube-flannel.yml
+ubuntu@master:~$ curl -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+ubuntu@master:~$ kubectl apply -f kube-flannel.yml
 ```
 
 #### 7. Check the cluster initialization:
 ```bash
-kubectl get pods -o wide --all-namespaces
+ubuntu@master:~$ kubectl get pods -o wide --all-namespaces
 ```
 
 After successfull initialization you should get:
@@ -164,18 +164,18 @@ kube-system   kube-scheduler-master            1/1       Running   0          8m
 
 ```bash
 vagrant ssh worker
-sudo kubeadm join --token 8c2350.f55343444a6ffc46 192.168.33.10:6443 --skip-preflight-checks
+ubuntu@worker2:~$ sudo kubeadm join --token 8c2350.f55343444a6ffc46 192.168.33.10:6443 --skip-preflight-checks
 ```
 ```bash
 vagrant ssh worker2
-sudo kubeadm join --token 8c2350.f55343444a6ffc46 192.168.33.10:6443 --skip-preflight-checks
+ubuntu@worker2:~$ sudo kubeadm join --token 8c2350.f55343444a6ffc46 192.168.33.10:6443 --skip-preflight-checks
 ```
 
 #### 9. Check the nodes creation:
 
 ```bash
 vagrant ssh master
-kubectl get nodes
+ubuntu@master:~$ kubectl get nodes
 ```
 
 After successfully adding nodes you should get:
@@ -212,8 +212,10 @@ kube-system   kube-scheduler-master                      1/1       Running   0  
 
 deploy topconnector/helloworld-go-ws
 
+vagrant ssh master
+
 ```bash
-kubectl run helloworld-go-ws --image=topconnector/helloworld-go-ws:v1 --port=8080 --record
+ubuntu@master:~$ kubectl run helloworld-go-ws --image=topconnector/helloworld-go-ws:v1 --port=8080 --record
 ```
 
 
