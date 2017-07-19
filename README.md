@@ -171,6 +171,21 @@ vagrant ssh worker2
 sudo kubeadm join --token 8c2350.f55343444a6ffc46 192.168.33.10:6443 --skip-preflight-checks
 ```
 
+#### 9. Check the nodes creation:
+
+```bash
+vagrant ssh master
+kubectl get nodes
+```
+
+After successfully adding nodes you should get:
+```bash
+ubuntu@master:~$ kubectl get nodes
+NAME      STATUS    AGE       VERSION
+master    Ready     19h       v1.7.1
+worker    Ready     19h       v1.7.1
+worker2   Ready     19h       v1.7.1
+```
 
 
 
