@@ -178,7 +178,7 @@ kube-system   kube-scheduler-master                      1/1       Running   0  
 ```
 
 
-## Using kubeadm to create a cluster - one master and two worker
+## Using kubeadm to create a cluster - multiple machines (3) configuration: 1 master and 2 worker
 
 Kubernetes is hard to install without using third party tools. kubeadm is an official tool for simple deployment. 
 
