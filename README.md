@@ -142,5 +142,10 @@ curl -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/ku
 kubectl apply -f kube-flannel.yml
 ```
 
+Check the installation:
+```bash
+kubectl get pods -o wide --all-namespaces
+```
+
 
 
