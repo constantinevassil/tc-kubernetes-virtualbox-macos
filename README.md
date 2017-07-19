@@ -81,6 +81,8 @@ end
 
 After all VMs are up and running the first step is to add official Kubernetes repo and to install all required packages:
 
+### install all required packages
+
 ```bash
 vagrant ssh master
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -119,6 +121,7 @@ To start using your cluster, you need to run (as a regular user):
 ```
 
 You should now deploy a pod network to the cluster.
+
 Flannel RBAC:
 ```bash
  curl -O https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel-rbac.yml
