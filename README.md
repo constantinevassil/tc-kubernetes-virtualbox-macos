@@ -94,6 +94,7 @@ vagrant ssh master
 ubuntu@master:~$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 ubuntu@master:~$ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ubuntu@master:~$ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
+ubuntu@master:~$ exit
 ```
 
 Repeat above step on the workers:
@@ -105,6 +106,7 @@ vagrant ssh worker
 ubuntu@worker:~$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 ubuntu@worker:~$ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ubuntu@worker:~$ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
+ubuntu@master:~$ exit
 ```
 
 #### 3. On worker2
@@ -114,6 +116,7 @@ vagrant ssh worker2
 ubuntu@worker2:~$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 ubuntu@worker2:~$ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ubuntu@worker2:~$ sudo apt-get update && sudo apt-get install -y docker-engine kubelet kubeadm kubectl kubernetes-cni
+ubuntu@master:~$ exit
 ```
 
 #### 4. Start cluster initialization on the master node.
@@ -163,17 +166,20 @@ kube-system   kube-dns-2425271678-d5b85        3/3       Running   0          13
 kube-system   kube-flannel-ds-vkcqt            2/2       Running   0          1m        192.168.33.10   master
 kube-system   kube-proxy-vthjs                 1/1       Running   0          13m       192.168.33.10   master
 kube-system   kube-scheduler-master            1/1       Running   0          8m        192.168.33.10   master
+ubuntu@master:~$ exit
 ```
 
 #### 8. Adding Kubernetes nodes. It is easy - just one command.
 
 ```bash
 vagrant ssh worker
-ubuntu@worker2:~$ sudo kubeadm join --token 8c2350.f55343444a6ffc46 192.168.33.10:6443 --skip-preflight-checks
+ubuntu@worker:~$ sudo kubeadm join --token 8c2350.f55343444a6ffc46 192.168.33.10:6443 --skip-preflight-checks
+ubuntu@worker:~$ exit
 ```
 ```bash
 vagrant ssh worker2
 ubuntu@worker2:~$ sudo kubeadm join --token 8c2350.f55343444a6ffc46 192.168.33.10:6443 --skip-preflight-checks
+ubuntu@worker2:~$ exit
 ```
 
 #### 9. Check the nodes creation:
