@@ -210,7 +210,7 @@ service "helloworld-go-ws" exposed
 
 ### 4. Access the service:
 
-1. get node "worker"'s IP address:
+1. get node "master"'s IP address:
 ```bash
 ubuntu@master:~$ kubectl describe nodes
 ...
