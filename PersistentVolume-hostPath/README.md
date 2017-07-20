@@ -38,3 +38,12 @@ go back to PersistentVolume-hostPath
 cd ..
 cd PersistentVolume-hostPath
 ```
+
+create deployment:
+
+```bash
+cd ..
+kubectl apply -f tc-tiny-go-ws-deployment01.yaml 
+```
+
+
