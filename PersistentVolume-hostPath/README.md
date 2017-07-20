@@ -57,12 +57,13 @@ create deployment:
 
 ```bash
 cd ..
-cat /vagrant/tc-tiny-go-ws-deployment01.yaml >tc-tiny-go-ws-deployment01.yaml 
-kubectl apply -f tc-tiny-go-ws-deployment01.yaml 
+ubuntu@master:~$ cat /vagrant/tc-tiny-go-ws-deployment01.yaml >tc-tiny-go-ws-deployment01.yaml 
+ubuntu@master:~$ kubectl apply -f tc-tiny-go-ws-deployment01.yaml 
 ```
 
 create service:
 
 ```bash
-kubectl expose deployment tc-tiny-go-ws-deployment --type=NodePort
+vagrant ssh master 
+ubuntu@master:~$ kubectl expose deployment tc-tiny-go-ws-deployment --type=NodePort
 ```
