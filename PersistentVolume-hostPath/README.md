@@ -44,6 +44,7 @@ ubuntu@master:~$ echo 'Hello from Kubernetes storage of www-02' > /tmp/www-02/in
 ubuntu@master:~$ cat /tmp/www-02/index.html
 exit
 ```
+4. Create deployment for ver. 2.0
 
 go back to PersistentVolume-hostPath
 
@@ -56,7 +57,12 @@ create deployment:
 
 ```bash
 cd ..
+cat /vagrant/tc-tiny-go-ws-deployment01.yaml >tc-tiny-go-ws-deployment01.yaml 
 kubectl apply -f tc-tiny-go-ws-deployment01.yaml 
 ```
 
+create service:
 
+```bash
+kubectl expose deployment tc-tiny-go-ws-deployment --type=NodePort
+```
