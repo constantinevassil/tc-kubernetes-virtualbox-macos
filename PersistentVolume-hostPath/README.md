@@ -5,13 +5,16 @@ A hostPath PersistentVolume uses a file or directory on the Node to emulate netw
 # Configure a Pod to Use a PersistentVolume for Storage
 
 1. Login to worker node:
+
 multiple machines:
 ```bash
+cd multiple-machines
 vagrant ssh worker 
 ```
 or 
 single machine:
 ```bash
+cd single-machine
 vagrant ssh master 
 ```
 
@@ -24,5 +27,12 @@ In the /tmp/www directory, create an index.html file:
 ```bash
 ubuntu@master:~$ echo 'Hello from Kubernetes storage of www' > /tmp/www/index.html
 ubuntu@master:~$ cat /tmp/www/index.html
+exit
+```
+
+go back to PersistentVolume-hostPath
+
+```bash
+cd ..
 
 ```
