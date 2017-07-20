@@ -358,17 +358,23 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 
 ### 3. Check master configuration 
 
+copy admin.conf to $HOME/.kube/config
+
+```bash
+prepare-using-cluster-locally.bash
+```
+
 Get nodes:
 
 ```bash
-kubectl --kubeconfig ./admin.conf get nodes
+kubectl get nodes
 AME      STATUS    AGE       VERSION
 master    Ready     11h       v1.7.1
 ```
 Get pods:
 
 ```bash
-kubectl --kubeconfig ./admin.conf get pods
+kubectl get pods
 NAME                                   READY     STATUS    RESTARTS   AGE
 tc-helloworld-go-ws-1724924830-gpf9c   1/1       Running   0          11h
 tc-helloworld-go-ws-1724924830-wv4f1   1/1       Running   0          11h
@@ -445,7 +451,7 @@ ubuntu@master:~$ kubectl apply -f admin-role.yml
 Run proxy to use dashboard locally:
 
 ```bash
-kubectl --kubeconfig ./admin.conf proxy
+kubectl proxy
 ```
 
 Proxy should be listening on 127.0.0.1:8001. 
