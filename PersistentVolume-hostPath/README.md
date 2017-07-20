@@ -8,12 +8,14 @@ A hostPath PersistentVolume uses a file or directory on the Node to emulate netw
 
 multiple machines:
 ```bash
+cd ..
 cd multiple-machines
 vagrant ssh worker 
 ```
 or 
 single machine:
 ```bash
+cd ..
 cd single-machine
 vagrant ssh master 
 ```
@@ -34,5 +36,5 @@ go back to PersistentVolume-hostPath
 
 ```bash
 cd ..
-
+cd PersistentVolume-hostPath
 ```
