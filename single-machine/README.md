@@ -399,7 +399,7 @@ ubuntu@master:~$ kubectl apply -f admin-role.yml
 Run proxy to use dashboard locally:
 
 ```bash
-kubectl --kubeconfig proxy
+kubectl proxy
 ```
 
 Proxy should be listening on 127.0.0.1:8001. 
