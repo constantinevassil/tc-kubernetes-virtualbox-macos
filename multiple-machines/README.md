@@ -341,11 +341,15 @@ exit
 
 on your your local machine:
 
-copy admin.conf to $HOME/.kube/config
+copy admin.conf to $HOME/.kube/config and prepare to use locally.
 
 ```bash
-prepare-using-cluster-locally.bash
+sudo mkdir -p $HOME/.kube
+sudo cp -i ./admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+sudo cat $HOME/.kube/config
 ```
+
 
 ### 2. Install and Set Up kubectl on your local machine
 
