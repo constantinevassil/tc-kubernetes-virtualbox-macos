@@ -336,8 +336,16 @@ Get admin.conf from /etc/kubernetes on master and copy to your local machine's c
 
 ```bash
 ubuntu@master:~$ cat /etc/kubernetes/admin.conf > /vagrant/admin.conf
+exit
 ```
 
+on your your local machine:
+
+copy admin.conf to $HOME/.kube/config
+
+```bash
+prepare-using-cluster-locally.bash
+```
 
 ### 2. Install and Set Up kubectl on your local machine
 
