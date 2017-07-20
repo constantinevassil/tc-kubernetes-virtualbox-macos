@@ -280,6 +280,12 @@ Get admin.conf from /etc/kubernetes on master and copy to your local machine's c
 ubuntu@master:~$ cat /etc/kubernetes/admin.conf > /vagrant/admin.conf
 ```
 
+copy admin.conf to $HOME/.kube/config
+
+```bash
+prepare-using-cluster-locally.bash
+```
+
 ### 2. Install and Set Up kubectl on your local machine
 
 Now in order for you to actually access your cluster from your Mac you need kubectl locally.
@@ -302,14 +308,14 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 Get nodes:
 
 ```bash
-kubectl --kubeconfig ./admin.conf get nodes
+kubectl get nodes
 AME      STATUS    AGE       VERSION
 master    Ready     11h       v1.7.1
 ```
 Get pods:
 
 ```bash
-kubectl --kubeconfig ./admin.conf get pods
+kubectl get pods
 NAME                                   READY     STATUS    RESTARTS   AGE
 tc-helloworld-go-ws-1724924830-gpf9c   1/1       Running   0          11h
 tc-helloworld-go-ws-1724924830-wv4f1   1/1       Running   0          11h
@@ -318,7 +324,7 @@ tc-helloworld-go-ws-1724924830-wv4f1   1/1       Running   0          11h
 Get services:
 
 ```bash
-kubectl --kubeconfig ./admin.conf get services
+kubectl get services
 NAME                  CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 kubernetes            10.96.0.1       <none>        443/TCP          11h
 tc-helloworld-go-ws   10.105.98.177   <nodes>       8080:32631/TCP   11h
@@ -386,7 +392,7 @@ ubuntu@master:~$ kubectl apply -f admin-role.yml
 Run proxy to use dashboard locally:
 
 ```bash
-kubectl --kubeconfig ./admin.conf proxy
+kubectl --kubeconfig proxy
 ```
 
 Proxy should be listening on 127.0.0.1:8001. 
