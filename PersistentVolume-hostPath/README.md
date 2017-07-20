@@ -57,7 +57,6 @@ create deployment:
 
 ```bash
 cd ..
-cat /vagrant/tc-tiny-go-ws-deployment01.yaml >tc-tiny-go-ws-deployment01.yaml 
 kubectl apply -f tc-tiny-go-ws-deployment01.yaml 
 ```
 
