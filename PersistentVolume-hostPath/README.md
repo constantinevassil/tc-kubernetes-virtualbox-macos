@@ -20,15 +20,28 @@ cd single-machine
 vagrant ssh master 
 ```
 
+2. Create directory for ver. 1.0
 ```bash
-ubuntu@master:~$ mkdir /tmp/www
+ubuntu@master:~$ mkdir /tmp/www-01
 ```
 
-In the /tmp/www directory, create an index.html file:
+In the /tmp/www-01 directory, create an index.html file:
 
 ```bash
-ubuntu@master:~$ echo 'Hello from Kubernetes storage of www' > /tmp/www/index.html
-ubuntu@master:~$ cat /tmp/www/index.html
+ubuntu@master:~$ echo 'Hello from Kubernetes storage of www-01' > /tmp/www-01/index.html
+ubuntu@master:~$ cat /tmp/www-01/index.html
+exit
+```
+3. Create directory for ver. 2.0
+```bash
+ubuntu@master:~$ mkdir /tmp/www-02
+```
+
+In the /tmp/www-01 directory, create an index.html file:
+
+```bash
+ubuntu@master:~$ echo 'Hello from Kubernetes storage of www-02' > /tmp/www-02/index.html
+ubuntu@master:~$ cat /tmp/www-02/index.html
 exit
 ```
 
