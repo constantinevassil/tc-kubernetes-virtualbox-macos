@@ -63,6 +63,5 @@ kubectl apply -f tc-tiny-go-ws-deployment01.yaml
 create service:
 
 ```bash
-vagrant ssh master 
 kubectl expose deployment tc-tiny-go-ws-deployment --type=NodePort
 ```
