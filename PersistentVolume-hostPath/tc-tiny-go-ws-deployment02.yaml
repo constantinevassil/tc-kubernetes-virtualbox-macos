@@ -1,0 +1,27 @@
+# for versions before 1.6.0 use extensions/v1beta1 apps/v1beta1
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: tc-tiny-go-ws-deployment
+spec:
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+       labels:
+        app: tc-tiny-go-ws
+    spec:
+      containers:
+      - name: tc-tiny-go-ws
+        image: topconnector/tc-tiny-go-ws:v1
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+          - mountPath: /tmp/www 
+            name: www-volume
+      volumes:
+      - name: www-volume
+        hostPath:
+        # directory location on host
+         path: /tmp/www-02  
+
+         
