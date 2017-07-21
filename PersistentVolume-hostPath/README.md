@@ -112,6 +112,6 @@ test service:
 
 ```bash
 curl 192.168.33.10:31449
-Hello from Kubernetes storage of www-02
+Hello from Kubernetes storage of www-01
 ```
 
