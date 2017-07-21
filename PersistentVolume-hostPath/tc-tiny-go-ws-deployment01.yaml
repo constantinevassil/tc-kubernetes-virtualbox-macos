@@ -22,6 +22,6 @@ spec:
       - name: www-volume
         hostPath:
         # directory location on host
-         path: /tmp/www-02  
+         path: /tmp/www-01 
 
          
