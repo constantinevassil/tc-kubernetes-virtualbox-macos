@@ -22,7 +22,7 @@ vagrant ssh master
 
 2. Create directory for ver. 1.0
 ```bash
-ubuntu@master:~$ mkdir /tmp/www-01
+ubuntu@master:~$ mkdir /tmp/www-01/
 ```
 
 In the /tmp/www-01 directory, create an index.html file:
@@ -44,7 +44,7 @@ ubuntu@master:~$ echo 'Hello from Kubernetes storage of www-02' > /tmp/www-02/in
 ubuntu@master:~$ cat /tmp/www-02/index.html
 exit
 ```
-4. Create deployment for ver. 2.0
+4. Create deployment for ver. 1.0
 
 go back to PersistentVolume-hostPath
 
@@ -58,10 +58,45 @@ create deployment:
 ```bash
 cd ..
 kubectl apply -f tc-tiny-go-ws-deployment01.yaml 
+kubectl get pods
+NAME                                       READY     STATUS    RESTARTS   AGE
+tc-tiny-go-ws-deployment-715299535-mgq2l   1/1       Running   0          12s
+tc-tiny-go-ws-deployment-715299535-nm04x   1/1       Running   0          12s
 ```
 
 create service:
 
 ```bash
 kubectl expose deployment tc-tiny-go-ws-deployment --type=NodePort
+kubectl get services
+NAME                       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+kubernetes                 10.96.0.1       <none>        443/TCP          1d
+tc-tiny-go-ws-deployment   10.110.226.49   <nodes>       8080:31449/TCP   39s
 ```
+
+test service:
+
+```bash
+curl 192.168.33.10:31449
+Hello from Kubernetes storage of www-01
+```
+
+replace deployment with v 2.0:
+
+```bash
+cd ..
+kubectl replace -f tc-tiny-go-ws-deployment02.yaml 
+kubectl get pods
+NAME                                       READY     STATUS    RESTARTS   AGE
+tc-tiny-go-ws-deployment-715299535-ccfx3   1/1       Running   0          16s
+tc-tiny-go-ws-deployment-715299535-qhpcm   1/1       Running   0          16s
+```
+
+test service:
+
+```bash
+curl 192.168.33.10:31449
+Hello from Kubernetes storage of www-02
+```
+
+
