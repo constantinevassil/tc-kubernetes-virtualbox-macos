@@ -99,4 +99,19 @@ curl 192.168.33.10:31449
 Hello from Kubernetes storage of www-02
 ```
 
+undo deployment:
+
+```bash
+kubectl get deployments
+NAME                       DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+tc-tiny-go-ws-deployment   2         2         2            2           11m
+kubectl rollout undo deployment tc-tiny-go-ws-deployment
+```
+
+test service:
+
+```bash
+curl 192.168.33.10:31449
+Hello from Kubernetes storage of www-02
+```
 
