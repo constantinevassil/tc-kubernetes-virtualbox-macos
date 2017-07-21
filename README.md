@@ -28,7 +28,8 @@ Topics:
 1. RBAC role
 1. Access Dashboard On local machine
 1. Access Service On local machine
-
+1. Persistent storage
+1. Golang example using hostPath
 
 single-machine
 
@@ -40,9 +41,7 @@ multiple-machines
 
 https://github.com/topconnector/tc-kubernetes-macos/tree/master/multiple-machines
 
-TODO:
 
-1. Persistent storage
-1. Golang example using hostPath
+
 
 
