@@ -25,21 +25,28 @@ You must have the following installed:
 
   Install by running: 
 
-    vagrant plugin install vagrant-vbguest
+```bash
+   vagrant plugin install vagrant-vbguest
+   vagrant vbguest --do install
+```
 
-    vagrant vbguest --do install
-
+ 
 * update Vagrant box
 
   Install by running: 
     
+```bash
     vagrant box update
+```
     
 * run Virtual machine (VM)
 
   Install by running: 
   
+```bash
     vagrant up
+```
+
 
 ## Using kubeadm to create a cluster - single machine configuration. To schedule pods on master node.
 
