@@ -56,7 +56,6 @@ cd PersistentVolume-hostPath
 create deployment:
 
 ```bash
-cd ..
 kubectl apply -f tc-tiny-go-ws-deployment01.yaml 
 kubectl get pods
 NAME                                       READY     STATUS    RESTARTS   AGE
