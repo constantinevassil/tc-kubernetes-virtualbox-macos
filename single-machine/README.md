@@ -13,6 +13,9 @@ cd tc-kubernetes-macos
 cd single-machine
 ```
 
+NOTE: to use VMware Fusion (Pro), rename Vagrantfile-VMWare to Vagrantfile
+
+
 You must have the following installed:
 
 * Virtualbox >= 5.1.22
@@ -51,14 +54,34 @@ You must have the following installed:
 ```bash
     vagrant box update
 ```
+   
+   OR
+   
+* update VMWare box
+
+  Install by running: 
+    
+```bash
+   vagrant box add bento/ubuntu-16.04
+```
     
 * run Virtual machine (VM)
 
   Install by running: 
   
+  Virtualbox:
+  
 ```bash
     vagrant up
 ```
+
+ VMWare:
+
+```bash
+    vagrant up --provider vmware_fusion
+```
+
+
 
 
 ## Using kubeadm to create a cluster - single machine configuration. To schedule pods on master node.
