@@ -1,13 +1,13 @@
 
-# kubernetes-macos
+# tc-kubernetes-virtualbox-macos
 
 Vagrant config to run a full local Kubernetes cluster using the source directory from your Mac.
 
 ## Getting started
 
-git clone https://github.com/topconnector/tc-kubernetes-macos.git
+git clone https://github.com/topconnector/tc-kubernetes-virtualbox-macos.git
 
-cd tc-kubernetes-macos
+cd tc-kubernetes-virtualbox-macos
 
 cd multiple-machines
 
@@ -93,6 +93,9 @@ Vagrant.configure("2") do |config|
     end
 end
 ```
+NOTE: 
+Check your IP address for conflicts on your local network:
+node.vm.network :private_network, ip: "192.168.33.10"
 
 After all VMs are up and running the first step is to add official Kubernetes repo and to install all required packages.
 
