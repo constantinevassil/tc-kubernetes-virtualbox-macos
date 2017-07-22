@@ -1,6 +1,6 @@
 # kubernetes-macos
 
-Vagrant config with Virtualbox to run a full local Kubernetes cluster using the source directory from your Mac.
+Vagrant config with Virtualbox provider to run a full local Kubernetes cluster using the source directory from your Mac.
 
 No scripts. Step by step for full understing the process.
 
