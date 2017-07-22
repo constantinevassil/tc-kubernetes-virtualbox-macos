@@ -1,5 +1,5 @@
 
-# kubernetes-macos
+# tc-kubernetes-virtualbox-macos
 
 Vagrant config to run a full local Kubernetes cluster using the source directory from your Mac.
 
@@ -8,13 +8,10 @@ Vagrant config to run a full local Kubernetes cluster using the source directory
 On Mac
 
 ```bash
-git clone https://github.com/topconnector/tc-kubernetes-macos.git
-cd tc-kubernetes-macos
+git clone https://github.com/topconnector/tc-kubernetes-virtualbox-macos.git
+cd tc-kubernetes-virtualbox-macos
 cd single-machine
 ```
-
-NOTE: to use VMware Fusion (Pro), rename Vagrantfile-VMWare to Vagrantfile
-
 
 You must have the following installed:
 
@@ -80,9 +77,6 @@ You must have the following installed:
 ```bash
     vagrant up --provider vmware_fusion
 ```
-
-
-
 
 ## Using kubeadm to create a cluster - single machine configuration. To schedule pods on master node.
 
