@@ -18,20 +18,10 @@ You must have the following installed:
 * Virtualbox >= 5.1.22
 
   Download and install from https://www.virtualbox.org/.
-  
-  OR
-  
-  VMware Fusion (Pro) >= 8.5
-  
-  https://www.vmware.com/products/fusion/fusion-evaluation.html
     
 * Vagrant >= 1.9.7
 
   Download and install from https://www.vagrantup.com/.
-
-  Vagrant + VMware
-  
-  Download and install from https://www.vagrantup.com/vmware/index.html
   
 * vagrant-vbguest Vagrant plugin
   automatically installs the host's VirtualBox Guest Additions on the guest system.
@@ -52,16 +42,6 @@ You must have the following installed:
     vagrant box update
 ```
    
-   OR
-   
-* update VMWare box
-
-  Install by running: 
-    
-```bash
-   vagrant box add bento/ubuntu-16.04
-```
-    
 * run Virtual machine (VM)
 
   Install by running: 
@@ -70,12 +50,6 @@ You must have the following installed:
   
 ```bash
     vagrant up
-```
-
- VMWare:
-
-```bash
-    vagrant up --provider vmware_fusion
 ```
 
 ## Using kubeadm to create a cluster - single machine configuration. To schedule pods on master node.
@@ -113,6 +87,11 @@ Vagrant.configure("2") do |config|
 end
 ```
 
+NOTE: 
+Check your IP address for conflicts on your local network:
+node.vm.network :private_network, ip: "192.168.33.10"
+
+
 After VM is up and running the first step is to add official Kubernetes repo and to install all required packages.
 
 ### Install all required packages
@@ -136,16 +115,6 @@ Virtualbox:
 vagrant ssh master
 ubuntu@master:~$ sudo kubeadm init --apiserver-advertise-address 192.168.33.10 --pod-network-cidr 10.244.0.0/16 --token 8c2350.f55343444a6ffc46
 ```
-
-OR
-
-VMWare:
-
-```bash
-vagrant ssh master
-ubuntu@master:~$ sudo kubeadm init --apiserver-advertise-address 192.168.44.10 --pod-network-cidr 10.244.0.0/16 --token 8c2350.f55343444a6ffc46
-```
-
 
 #### 5. To start using your cluster, you need to run (as a regular user):
 
@@ -272,23 +241,7 @@ Addresses:
 ...  
 ```
 
-OR
-
-VMWare:
-
-...
-Addresses:
-  InternalIP:	192.168.44.10
-  Hostname:	master
-...  
-```
-
 IP address:192.168.33.10
-
-OR
-
-IP address:192.168.44.10
-
 
 2. get service port number
 
@@ -305,22 +258,10 @@ service port number:32658
 
 The http address of the service: 192.168.33.10:30350
 
-OR 
-
-The http address of the service: 192.168.44.10:30350
-
 ```bash
 ubuntu@master:~$ curl http://192.168.33.10:30350
 Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 78ns to run
 ```
-
-OR
-
-```bash
-ubuntu@master:~$ curl http://192.168.44.10:30350
-Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 78ns to run
-```
-
 
 ### 6. Update your app to version 2
 
