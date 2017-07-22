@@ -33,13 +33,13 @@ Topics:
 
 single-machine
 
-https://github.com/topconnector/tc-kubernetes-macos/blob/master/single-machine
+https://github.com/topconnector/tc-kubernetes-virtualbox-macos/blob/master/single-machine
 
 or
 
 multiple-machines
 
-https://github.com/topconnector/tc-kubernetes-macos/tree/master/multiple-machines
+https://github.com/topconnector/tc-kubernetes-virtualbox-macos/tree/master/multiple-machines
 
 
 
