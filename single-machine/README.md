@@ -268,6 +268,9 @@ service "helloworld-go-ws" exposed
 1. get node "master"'s IP address:
 ```bash
 ubuntu@master:~$ kubectl describe nodes
+
+Virtualbox:
+
 ...
 Addresses:
   InternalIP:	192.168.33.10
@@ -275,7 +278,23 @@ Addresses:
 ...  
 ```
 
+OR
+
+VMWare:
+
+...
+Addresses:
+  InternalIP:	192.168.44.10
+  Hostname:	master
+...  
+```
+
 IP address:192.168.33.10
+
+OR
+
+IP address:192.168.44.10
+
 
 2. get service port number
 
@@ -292,8 +311,19 @@ service port number:32658
 
 The http address of the service: 192.168.33.10:30350
 
+OR 
+
+The http address of the service: 192.168.44.10:30350
+
 ```bash
 ubuntu@master:~$ curl http://192.168.33.10:30350
+Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 78ns to run
+```
+
+OR
+
+```bash
+ubuntu@master:~$ curl http://192.168.44.10:30350
 Hello World from Go in minimal Docker container(4.28MB) v.1.0, it took 78ns to run
 ```
 
